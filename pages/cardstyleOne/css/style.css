@@ -1,0 +1,135 @@
+ /*#####################################################
+  General Thinks
+ #####################################################*/
+
+ :root{
+    /*Overall*/
+    --basicborderRadius: 0.5rem;
+    --basicPadding: 1rem;
+    --basicMargin: 1rem;
+    --darkFontColor: black;
+    --brightFontColor: white;
+  
+    /*Cards*/
+    --backgroundColorCards: #f8f8f8;
+    --gap: 2rem;
+  
+    /*Card*/
+    --minWidthCard: 120px;
+    --maxWidthCard: 240px;
+    --maxHightImg: 150px;
+    --backgroundColorCard: rgba(255, 250, 255, 0.8);
+    --boxShadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+    /*Button*/
+    --buttonPadding: 9px;
+    --buttonBackgroundColor: #09BC8A;
+    --buttonBackgroundcolorHover: #24dda9;
+    --buttonColor: white;
+    --buttonBorder:  2px solid #09BC8A;
+  }
+  
+  *{
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      color: var(--darkFontColor);
+  }
+  
+   /*#####################################################
+    Cards Container
+   #####################################################*/
+  
+   .cards{
+      /*optik*/
+      background-color: var(--backgroundColorCards);
+      /*layout*/
+      margin: var(--basicMargin);
+      padding: var(--basicPadding);
+      /*flex-parent*/
+      display: flex; /*set class as flex container*/
+      gap: var(--gap); /*gap between cards*/
+      justify-content: center; /*aligns flex items along the primary-axis*/
+      align-items: stretch; /*aligns flex items along the cross-axis - Items within a row*/
+      flex-wrap: wrap;
+      align-content: center; /*aligns flex rows along the cross-axis - Needed if more than one rows (affect only with wrap property)*/
+  }
+  
+  
+   /*#####################################################
+    Card itself
+   #####################################################*/
+  .card {
+      /*optik*/
+      background-color: var(--backgroundColorCard);
+      border-radius:  var(--basicborderRadius);
+      box-shadow: var(--boxShadow);
+      /*layout*/
+      min-width: var(--minWidthCard);
+      max-width: var(--maxWidthCard);
+      /*Transform/Transition*/
+      overflow: hidden; /*Everything above this element (too large) is hidden*/
+      transition: transform 0.3s ease;
+      /*flex-parent*/
+      display: flex;
+      flex-direction: column;
+      justify-content:flex-start; /*aligns flex items along the primary-axis*/
+  
+    }
+  
+  
+  /*#####################################################
+    Card behavior
+   #####################################################*/
+    .card:hover {
+      transform: translateY(-5px);
+    }
+  
+  
+  /*#####################################################
+    Card Elements
+   #####################################################*/
+  .card_img{
+    /*optik*/
+    border-top-left-radius:  var(--basicborderRadius);
+    /*box-shadow: var(--boxShadow); */
+    /*layout*/
+    max-width: 100%;
+    height: var(--maxHightImg);
+    object-fit: cover;
+  }
+  
+  .card_headline{
+    /*layout*/
+    text-align: center;
+    padding: var(--basicPadding);
+  }
+  
+  .card_p{
+    /*layout*/
+    text-align: center;
+    padding: var(--basicPadding);
+    /*flex-child*/
+    flex: 1; /*margin-bottom:auto will lead to the same behavior (pushing the button to the end) but without growing the p box*/
+    /*margin-bottom:  auto; */
+  }
+  
+  .card_button{
+     /*layout*/
+    width: 50%; /*in relation to the parent element*/
+    display: block; /*needed to use margin:0 auto;*/
+    padding: var(--buttonPadding);
+    margin: 0 auto; /*centralizes the button*/
+    margin-bottom: var(--basicMargin);
+    /*optik*/
+    border-radius: var(--basicborderRadius);
+    background-color: var(--buttonBackgroundColor);
+    color: var(--buttonColor);
+    border: var(--buttonBorder);
+    overflow: hidden; /*overflowing text will be hidden*/
+    text-overflow: ellipsis; /*if overflow exist, the button-text will be cuttet with "..." works only togehter with "overflow: hidden"*/
+  }
+  
+  .card_button:hover{
+    background-color: var(--buttonBackgroundcolorHover);
+  }
