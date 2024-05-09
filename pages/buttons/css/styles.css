@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border:none;
+}
+
+/* #####################################################
+    Container for Buttons
+##################################################### */
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* #####################################################
+    Button 1
+##################################################### */
+
+.btn1{
+    background-color: aqua;
+    border: 2px solid rgb(136, 127, 255);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+.btn1:hover{
+    background-color: rgb(182, 175, 245);
+    border: 2px solid rgb(136, 127, 255);
+}
+
+/* #####################################################
+    Button x
+##################################################### */
+
+/* tbd */
